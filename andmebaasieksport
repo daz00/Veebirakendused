@@ -1,0 +1,10 @@
+
+CREATE TABLE IF NOT EXISTS `Users` (
+  `username` varchar(15) CHARACTER SET utf8 COLLATE utf8_estonian_ci NOT NULL,
+  `password` varchar(20) CHARACTER SET utf8 COLLATE utf8_estonian_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `time_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`username`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
