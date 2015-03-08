@@ -1,0 +1,182 @@
+* {
+	margin: 0;
+	outline: 0;
+	padding-top: 0%;
+	padding-right: 0%;
+	padding-bottom: 0%;
+	padding-left: 0%;
+}
+
+body {
+    font-size: 12px;
+    line-height: 18px;
+    font-family: arial, sans-serif;
+    color: #a8a8a8;
+    background: #242424 url(images/taust2.png) repeat 0 0;
+    min-width: 1000px;
+}
+
+a { color: #349ce6; text-decoration: none; cursor: pointer; }
+a:hover { text-decoration: underline; }
+a img { border: 0; }
+
+input, textarea, select { font-size: 12px; font-family: arial, sans-serif; }
+textarea { overflow: auto; }
+
+.cl { display: block; height: 0; font-size: 0; line-height: 0; text-indent: -4000px; clear: both; }
+.notext { font-size: 0; line-height: 0; text-indent: -4000px; }
+.left, .alignleft { float: left; display: inline; }
+.right, .alignright { float: right; display: inline; }
+
+#wrapper { background: url(images/wrapper.png) repeat-x 0 0; }
+
+.shell { padding: 9px 0 30px; width: 995px; margin: 0 auto; background: url(images/top-lights.png) no-repeat 0 0; }
+
+#top-navigation { color: #000; padding-left: 10px; }
+#top-navigation a { color: #818082; }
+#top-navigation a:hover { color: #b2b2b2; }
+#top-navigation span { padding: 0 6px 0 9px; }
+
+#header {
+	position: relative;
+	width: 981px;
+	padding-top: 40px;
+	padding-right: 0;
+	padding-bottom: 2px;
+	padding-left: 9px;
+}
+ 
+#logo { display: inline; float: left; width: 450px; }
+#logo a { display: block; width: 450px; height: 60px; background: url(images/logo.png) no-repeat 0 0; font-size: 0; line-height: 0; text-indent: -4000px; }
+
+
+
+#navigation {
+	margin: 0 0 0 7px;
+	padding: 0px 0 0 3px;
+	width: 983px;
+	height: auto;
+	background: url(images/menu.png) no-repeat 0 0;
+}
+#navigation ul li { list-style: none; display: inline; float: left;	line-height: 60px; text-shadow: 1px 1px #1b3242; background: url(images/menuvahe.png) no-repeat left 0; }
+#navigation ul li { font-family: 'Play', sans-serif; font-size: 14px; text-transform: uppercase; font-weight: bold; }
+#navigation ul li.first a { padding: 0 23px 0 26px; background: url(images/nav-first.png) no-repeat 0 -4000px; }
+#navigation ul li.vahe_esimene { padding: 0 300px 0 320px; repeat  -4000px; }
+#navigation ul li a {
+	display: inline;
+	float: left;
+	color: #fff;
+	background: url(images/nav-item.png) repeat-x 0 -4000px;
+	padding-top: 0;
+	padding-right: 47px;
+	padding-bottom: 0;
+	padding-left: 36px;
+}
+#navigation ul li a:hover { background-position: 0 0; text-decoration: none; }
+
+#caption {
+	position: absolute;
+	top: 468px;
+	left: 385px;
+	padding-top: 16px;
+	width: 581px;
+	height: 57px;
+	background: url(images/caption.png) repeat-x 0 0;
+}
+#caption p { text-align: center; font-family: 'Play', sans-serif; font-size: 20px; color: #fff; font-weight: bold; line-height: 32px; }
+#caption p span { padding: 0 22px 0 20px; font-family: arial, sans-serif; font-size: 10px; color: #8a8b89; text-transform: uppercase; font-weight: normal; line-height: 32px; }
+#caption mängi { display: inline-block; width: 116px; height: 32px; line-height: 32px; background: url(images/nupp.png) no-repeat 0 0; }
+#caption mängi { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; color: #fff; text-align: center; }
+#caption mängi:hover { text-decoration: none; background-position: 0 -32px; }
+
+#main { padding-left: 4px; }
+#main-top { font-size: 0; line-height: 0; text-indent: -4000px; height: 10px; background: url(images/main-top.png) no-repeat 0 0; }
+#main-middle {
+	width: 940px;
+	background: url(images/main-middle.png) repeat-y 0 0;
+	padding-top: 10px;
+	padding-right: 27px;
+	padding-bottom: 0;
+	padding-left: 27px;
+}
+#main-bottom { font-size: 0; line-height: 0; text-indent: -4000px; height: 11px; background: url(images/main-bottom.png) no-repeat 0 0; }
+
+h2 {
+	margin-bottom: 7px;
+	font-family: 'Play', sans-serif;
+	font-size: 20px;
+	line-height: 47px;
+	color: #fff;
+	font-weight: normal;
+	border-bottom: solid 1px #373737;
+}
+#login {
+	display: inline;
+	float: left;
+	width: 500px;
+	padding-right: 20%;
+	padding-left: 23%;
+	padding-top: 5%;
+	padding-bottom: 0%;
+	text-align: center;
+	margin: auto;
+}
+
+post p { padding: 9px 0 10px; text-align:center; }
+a.mängi { display: block; width: 98px; height: 27px; line-height: 27px; background: url(images/nupp.png) no-repeat 0 0; text-align: center; font-weight: bold; color: #fff;}
+a.mängi:hover { text-decoration: none; background-position: 0 -27px; }
+.info {
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-right: 0%;
+	padding-left: 0%;
+	margin: auto;
+
+}
+.kasutaja {
+	text-align:right;
+	width:70%;
+	padding-bottom:3%;
+}
+
+#content {
+	display: inline;
+	float: left;
+	width: 500px;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-top: 2%;
+	padding-bottom: 0px;
+}
+.post {
+	padding-bottom: 10%;
+	text-align:left;
+	}
+	
+.post p { padding: 9px 0 10px; text-align:left; }
+.post a.mängi { display: block; width: 98px; height: 27px; line-height: 27px; background: url(images/nupp.png) no-repeat 0 0; text-align: center; font-weight: bold; color: #fff; }
+.post a.mängi:hover { text-decoration: none; background-position: 0 -27px; }
+
+#külgriba {
+	display: inline;
+	float: right;
+	width: 400px;
+	padding-top: 60px;
+	padding-right: 2px;
+	padding-bottom: 10px;
+	padding-left: 2px;
+}
+.pildid külgribal {
+	padding-bottom: 60px;
+}
+.contact h2 { margin-bottom: 16px; }
+
+#footer { padding-top: 11px; }
+#footer .copy { float: right; padding-right: 2px; color: #8e8e8e; line-height: 19px; }
+#footer .copy span { color: #000; padding: 0 4px; }
+#footer .copy a { color: #c2c3c3; text-decoration: underline; }
+#footer .copy a:hover { text-decoration: none; }
+
+#bottom-nav { padding-left: 8px; color: #000; }
+#bottom-nav span { padding: 0 8px 0 6px; }
+#bottom-nav a { color: #8e8e8e; }
