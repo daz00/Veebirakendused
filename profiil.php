@@ -68,6 +68,7 @@ if((!isset($_SESSION['username'])))
 
 					echo $_SESSION["username"];
 					lae_profiil($_SESSION["username"]);
+					attacks($_SESSION["username"]);
 
 					?> !</h2> 
                     <h3><strong> Sinu hetkeseis: </strong> </h3>
@@ -86,6 +87,13 @@ if((!isset($_SESSION['username'])))
                     <h3>Kasutaja loodud:  <?php
 
 					echo $_SESSION["time_created"];
+
+					?></h3>
+
+					<h3>Ründeid tehtud:  <?php
+
+					if($_SESSION["attacks"]){echo $_SESSION["attacks"];}
+					else{echo "Pole rünnanud";}
 
 					?></h3> </div>
 
