@@ -1,3 +1,15 @@
+﻿ <?php
+session_start();
+include "databaseconnect.php"; 
+if((!isset($_SESSION['username'])))
+{
+	header('Location: http://koodiimpeerium.esy.es/login.html');
+}
+?>
+
+
+
+ 
   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   
   <html xmlns="http://www.w3.org/1999/xhtml">
@@ -52,18 +64,37 @@
                       <!-- Content -->
                       <div id="content">
                           <div class="post">
-                              <h2>Siia tervitav sõnum ja/või tutvustus!</h2>
-                              <p><strong>TESTTTT Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id molestie enim. Suspendisse consequat urna non ante gravida euismod. In in nibh vestibulum at tellus viverra nulla.</strong></p>
-                              <p>Aliquam pulvinar. Maecenas nulla arcu, venenatis et ultrices id, tincidunt ut nisl. Etiam augue lectus,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id molestie enim. Suspendisse consequat urna non ante gravida euismod. In in nibh nulla. Stibulum at tellus viverra nulla aliquam pulvinar. Maecenas nulla arcu, venenatis et ultrices id, tincidunt ut nisl. Maecenas nulla arcu, venenatis et ultrices id, tincidunt ut nisl. Etiam augue lectus,Lorem ipsum dolor sit amet, consect dolor sit amet adipising ultrices id, tincidunt ut nisl. </p>
-                              <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id molestie enim. Suspendisse consequat urna non ante gravida euismod. In in nibh vestibulum at tellus viverra nulla.<br />
-                              </strong>							</p>
+                       <h2>Tere tulemast, <?php
+
+					echo $_SESSION["username"];
+					lae_profiil($_SESSION["username"]);
+
+					?> !</h2> 
+                    <h3><strong> Sinu hetkeseis: </strong> </h3>
+                    <h3>Kogu raha:  <?php
+
+					echo $_SESSION["fame"];
+
+					?></h3>
+                    
+                    <h3>Käesolev raha:  <?php
+
+					echo $_SESSION["money"];
+
+					?></h3>
+                    
+                    <h3>Kasutaja loodud:  <?php
+
+					echo $_SESSION["time_created"];
+
+					?></h3> </div>
+
+
                               
-                              <div class="mängi"><a title="Mängima!" class="mängi" href="/login.html">Mängima !</a></div>
-                          </div>
+                            
                           <div class="post games">
-                              <h2>Uuendused</h2>
-                              <p>Võiks ju kuskil nendes ka rääkida?<br />
-                              5.03.2014 - Leidsime lõpuks koha kuhu oma leht riputada. Jee.</p>
+                              <h2>Profiili muutmine:</h2>
+                             
                               
                           </div>
                       </div>
@@ -71,11 +102,10 @@
                       <!-- Sidebar -->
                     <div id="külgriba">
                           <div class="pildid">
-                              <h2><img src="css/images/filler.png" width="100%" height="100%" longdesc="css/images/filler.png" alt =""/></h2>
+                              <img src="css/images/profiilipilt.png" width="60%"  alt =""/>
                         </div>
-                          <div class="pildid">
-                            <h2><img src="css/images/filler.png" width="100%" height="100%" longdesc="css/images/filler.png" alt = ""/></h2>
-                        </div>
+                          
+                      
                       </div>
                       <!-- END Sidebar -->
                     <div class="cl"></div>
