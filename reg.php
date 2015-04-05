@@ -12,15 +12,15 @@ include "header_reg.php";
 							 <div class = "ymbris"><p> Sisesta kasutajanimi:
                                 <input type="text" name="kasutaja_nimi" id= "kasutaja_nimi" /></p></div>
                                  <div class = "ymbris"> <p>Sisesta salasõna:
-                                   <input type="password" name="parool_1" id="parool_1" onKeyUp="checkPass(); return false;"/> </p></div>
+                                   <input type="password" name="parool_1" id="parool_1" onkeyup="checkPass(); return false;"/> </p></div>
                                      <div class = "ymbris"><p>Sisesta salasõna uuesti:
-                                   <input type="password" name="parool_2" id="parool_2" onKeyUp="checkPass(); return false;" /> </p></div>
+                                   <input type="password" name="parool_2" id="parool_2" onkeyup="checkPass(); return false;" /> </p></div>
                                     <div class = "ymbris"> <p>Sisesta e-mail:
-                                   <input type="text" name="email_1" id= "email_1" onKeyUp="checkMail(); return false;"/> </p></div>
+                                   <input type="text" name="email_1" id= "email_1" onkeyup="checkMail(); return false;"/> </p></div>
                                     <div class = "ymbris"> <p>Sisesta e-mail uuesti:
-                                   <input type="text" name="e_mail2"  id= "email_2" onKeyUp="checkMail(); return false;"/> </p></div>
+                                   <input type="text" name="e_mail2"  id= "email_2" onkeyup="checkMail(); return false;"/> </p></div>
                                   
-                                <input type="submit" name="Loo kasutaja" value="Registreeri!" class="submit" onClick="ValidateForm(); return false;" />
+                                <input type="submit" name="Loo kasutaja" value="Registreeri!" class="submit" onclick="ValidateForm(); return false;" />
                                    </form>
                            </div>
                            <p id="confirm"> </p>
