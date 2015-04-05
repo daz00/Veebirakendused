@@ -1,3 +1,7 @@
+﻿<?php
+session_start();
+?>
+ 
   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   
   <html xmlns="http://www.w3.org/1999/xhtml">
@@ -28,20 +32,25 @@
               
               <!-- Slider -->
           <div class ="header">
-            <img src="css/images/pilt.png" alt="Mingi decent pilt tuleb siia" width="100%" /></div>
+            <img src="css/images/pilt.png" alt="Asendub kunagi meie pildiga" width="100%" /></div>
                       
                           <!-- Menüü (Lisada teistel lehtedel juurde) -->
   <div class="main-top-2"></div>
   <div id="navigation">
         <ul>
-				<li class="first"><a title="Avaleht" href="/index.html">Avaleht</a></li>
-                <li> <a title="Kirjakast" href="/kirjad.html">Kirjakast</a></li>
+				<li class="first"><a title="Avaleht" href="/index.php">Avaleht</a></li>
+                <li> <a title="Kirjakast" href="/kirjad.php">Kirjakast</a></li>
                 <li> <a title="Profiil" href="/profiil.php">Minu profiil</a></li>
-                <li> <a title="Mängi" href="/mng.html">MÄNGIMA</a> </li>
-                <li> <a title="Edetabel" href="/tabel.html">Edetabel</a> </li>
-				<li><a title="Login" href="/login.html">Sisene</a></li>
-				<li><a title="Abi" href="/abi.html">Abi</a></li>
-				</ul>
+                <li> <a title="Mängi" href="/mng.php">MÄNGIMA</a> </li>
+                <li> <a title="Edetabel" href="/tabel.php">Edetabel</a> </li>
+						<?php
+				if(!isset($_SESSION['username'])){
+				echo '<li><a title="Login" href="/login.php">Sisene</a></li>';
+				} else {
+				echo '<li><a title="Logout" href="/logout.php">Välju</a></li>';}
+				?>
+      </ul>
+       
                   <div class="cl"></div>
               </div>
               <!-- END Navigation -->
@@ -49,36 +58,39 @@
               <div id="main">
                  <div class="main-top-2"></div>
                   <div id="main-middle">
+                
                       <!-- Content -->
                       <div id="content">
                           <div class="post">
                               <h2>Siia tervitav sõnum ja/või tutvustus!</h2>
-                              <p><strong>TESTTTT Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id molestie enim. Suspendisse consequat urna non ante gravida euismod. In in nibh vestibulum at tellus viverra nulla.</strong></p>
+                              <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id molestie enim. Suspendisse consequat urna non ante gravida euismod. In in nibh vestibulum at tellus viverra nulla.</strong></p>
                               <p>Aliquam pulvinar. Maecenas nulla arcu, venenatis et ultrices id, tincidunt ut nisl. Etiam augue lectus,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id molestie enim. Suspendisse consequat urna non ante gravida euismod. In in nibh nulla. Stibulum at tellus viverra nulla aliquam pulvinar. Maecenas nulla arcu, venenatis et ultrices id, tincidunt ut nisl. Maecenas nulla arcu, venenatis et ultrices id, tincidunt ut nisl. Etiam augue lectus,Lorem ipsum dolor sit amet, consect dolor sit amet adipising ultrices id, tincidunt ut nisl. </p>
                               <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id molestie enim. Suspendisse consequat urna non ante gravida euismod. In in nibh vestibulum at tellus viverra nulla.<br />
                               </strong>							</p>
                               
                               <div class="mängi"><a title="Mängima!" class="mängi" href="/login.html">Mängima !</a></div>
-                          </div>
-                          <div class="post games">
+                          
+                          <div class="uuendused">
                               <h2>Uuendused</h2>
                               <p>Võiks ju kuskil nendes ka rääkida?<br />
                               5.03.2014 - Leidsime lõpuks koha kuhu oma leht riputada. Jee.</p>
                               
-                          </div>
-                      </div>
+                          </div></div>
+                      
                       <!-- END Content -->
                       <!-- Sidebar -->
                     <div id="külgriba">
                           <div class="pildid">
-                              <h2><img src="css/images/filler.png" width="100%" height="100%" longdesc="css/images/filler.png" alt =""/></h2>
+                              <img src="css/images/filler.png" width="100%" longdesc="css/images/filler.png" alt =""/>
                         </div>
                           <div class="pildid">
-                            <h2><img src="css/images/filler.png" width="100%" height="100%" longdesc="css/images/filler.png" alt = ""/></h2>
+                            <img src="css/images/filler.png" width="100%" longdesc="css/images/filler.png" alt = ""/> 
                         </div>
                       </div>
                       <!-- END Sidebar -->
-                    <div class="cl"></div>
+                      </div>
+                                        
+  <div class="cl"></div>
                   </div>
               </div>
               <!-- END Main -->
