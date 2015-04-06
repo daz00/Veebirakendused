@@ -7,7 +7,7 @@ session_start();
   <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
       <title>CE: Code Empire</title>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
       <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
       <link rel="icon" type="image/png" href="css/images/ce.ico"/>
   

@@ -38,7 +38,7 @@ session_start();
   <div id="navigation">
         <ul>
 				<li class="first"><a title="Avaleht" href="/index.php">Avaleht</a></li>
-                <li> <a title="Kirjakast" href="/kirjakast.php">Kirjakast</a></li>
+                <li> <a title="Kirjakast" href="/kirjad.php">Kirjakast</a></li>
                 <li> <a title="Profiil" href="/profiil.php">Minu profiil</a></li>
                 <li> <a title="Mängi" href="/mng.php">MÄNGIMA</a> </li>
                 <li> <a title="Edetabel" href="/tabel.php">Edetabel</a> </li>
