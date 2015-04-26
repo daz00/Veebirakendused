@@ -46,16 +46,49 @@ try{
 }
 }
 
-function registreeri_FB($user, $email){
+function check_fb($email){
 global $dbusername;
 global $dbpassword;
 try {
   $pdo = new PDO('mysql:host=mysql.hostinger.ee;dbname=u179834919_baas', $dbusername, $dbpassword);
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
  
-  $sql = "INSERT INTO Users (username, email) VALUES (:username, :email)";
+  $stmt = $conn->prepare('SELECT * FROM Users WHERE email = :email');
+    $stmt->execute(array(
+	':email' => $email,
+	));
+ 
+ 
+  # Affected Rows?
+  echo $stmt->rowCount();
+} catch(PDOException $e) {
+  echo 'Error: ' . $e->getMessage();
+}
+try{
+ $sql = "INSERT INTO Data (email) VALUES (:email)";
   $stmt = $pdo->prepare($sql);
   $stmt->execute(array(
+    ':email' => $email
+  ));
+ 
+  # Affected Rows?
+  echo $stmt->rowCount();
+} catch(PDOException $e) {
+  echo 'Error: ' . $e->getMessage();
+}
+}
+
+function registreeri_FB($FB, $user, $email){
+global $dbusername;
+global $dbpassword;
+try {
+  $pdo = new PDO('mysql:host=mysql.hostinger.ee;dbname=u179834919_baas', $dbusername, $dbpassword);
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+ 
+  $sql = "INSERT INTO Users (FB, username, email) VALUES (:FB, :username, :email)";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute(array(
+	':FB'=> $FB,
     ':username' => $user,
 	':email' => $email
   ));
@@ -104,27 +137,25 @@ try {
 }
 }
 
-function login_FB($user, $email){
+function login_FB($email){
 global $dbusername;
 global $dbpassword;
 try {
+
     $conn = new PDO('mysql:host=mysql.hostinger.ee;dbname=u179834919_baas', $dbusername, $dbpassword);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
      
-    $stmt = $conn->prepare('SELECT * FROM Users WHERE username = :user AND email = :email');
+    $stmt = $conn->prepare('SELECT * FROM Users WHERE email = :email');
     $stmt->execute(array(
-	':user' => $user,
 	':email' => $email ));
  
     $result = $stmt->fetchAll();
  
-  if ( count($result) ) { 
-  $_SESSION["username"]=$user;
-	return true;
-    foreach($result as $row) {
-      print_r($row);
-	  echo $row['username']. '<br />';
-    }   
+  if ( count($result) ){
+  foreach($result as $row) { 
+  $_SESSION["username"]= $row['username'];
+
+	}return true; 
   } else {
     echo "No rows returned.";
   }

@@ -1,13 +1,13 @@
 <?php
 include "header.php";
-
 ?>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 <script type="text/javascript"     src="js/edetabel.js"></script>
+<script type="text/javascript"     src="js/cachesync.js"></script>
 
 <body onload = setInterval("checkhash()",1000)>
-
- 	<!-- Content -->	
+  
+  <!-- Content -->	
      <div id="login">
      <div class="ymbris">
      <p> <strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id molestie enim. Suspendisse consequat urna non ante gravida euismod. In in nibh vestibulum at tellus viverra nulla. </strong></p></div>

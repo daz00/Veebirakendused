@@ -1,7 +1,7 @@
  <?php
 include "header.php";
 if(!isset($_SESSION['username'])){
-	$_SESSION['viimaneleht'] = 'profiil.php';
+	$_SESSION['viimaneleht'] = 'mng.php';
 	header("Location:login.php");
 }
 include "databaseconnect.php";

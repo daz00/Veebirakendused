@@ -1,0 +1,17 @@
+﻿CACHE MANIFEST
+
+# 2013-02-21 v1.1.0
+
+/index.php
+/tabel.php
+/action/lae_esimene.php
+/action/lae_teine.php
+/action/lae_kolmas.php
+/js/meng.js
+/js/edetabel.js
+/js/fun.js
+/js/cachesync.js
+/css/style.css
+
+NETWORK:
+*                                   

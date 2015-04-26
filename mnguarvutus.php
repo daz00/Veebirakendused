@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html>
-<body>
+<!DOCTYPE html>
+<html>
+<body>
 
 <?php
 function Hind($worker){
@@ -10,11 +10,11 @@ function Hind($worker){
                        }
                        else {
                        $hind_manager ==  max( $_SESSION["manager"], 1) * 250 * $_SESSION["tech"];
-                       } 
-
-    
-}   }
-
-?>
-</body>
-</html>
+                       } 
+
+    
+}   }
+
+?>
+</body>
+</html>

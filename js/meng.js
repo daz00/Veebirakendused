@@ -30,7 +30,7 @@ function Ajax()
            url: 'muuda_mng.php',
            data:{action:'call_this'},
            success:function(html) {
-              location.reload();
+               location.reload();
            }
 
       });

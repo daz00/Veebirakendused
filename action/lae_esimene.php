@@ -21,7 +21,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
-	echo "<table id = 'tabel'><tr><th>#Nr</th><th>Kasutajanimi</th><th>Varad</th></tr>";
+	echo "<table id = 'tabel'><tr><th font-size: 16px;>#Nr</th><th>Kasutajanimi</th><th>Varad</th></tr>";
 	$i = 1;
     while($row = $result->fetch_assoc()) {
        echo "<tr><td>".$i."</td><td>".$row["username"]."</td><td> ".$row["fame"]."</td></tr>";

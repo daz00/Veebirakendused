@@ -10,8 +10,23 @@ session_start();
       <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
       <link rel="icon" type="image/png" href="css/images/ce.ico"/>
 	  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" type="text/jscript"></script>
-      <script src="js/test.js" type="text/javascript"></script>
-  </head>
+    <script>
+    FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+        });
+  $(document).ready(function() {
+  $.ajaxSetup({ cache: true });
+  $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+    FB.init({
+      appId: '830496170354322',
+      version: 'v2.2' // or v2.0, v2.1, v2.0
+    });     
+    $('#loginbutton,#feedbutton').removeAttr('disabled');
+    FB.getLoginStatus(updateStatusCallback);
+  });
+});
+    </script>
+      </head>
   <body>
       <!-- Wrapper -->
       <div id="wrapper">
@@ -39,16 +54,11 @@ session_start();
   <div id="navigation">
         <ul>
 				<li class="first"><a title="Avaleht" href="/index.php">Avaleht</a></li>
-                <li> <a title="Kirjakast" href="/kirjakast.php">Kirjakast</a></li>
+                <li> <a title="Kirjakast" href="/kirjad.php">Kirjakast</a></li>
                 <li> <a title="Profiil" href="/profiil.php">Minu profiil</a></li>
                 <li> <a title="Mängi" href="/mng.php">MÄNGIMA</a> </li>
                 <li> <a title="Edetabel" href="/tabel.php">Edetabel</a> </li>
-						<?php
-				if(!isset($_SESSION['username']) && !isset($_SESSION['FBID'])){
-				echo '<li><a title="Login" href="/login.php">Sisene</a></li>';
-				} else {
-				echo '<li><a title="Logout" href="/logout.php">Välju</a></li>';}
-				?>
+						
 				</ul>
                   <div class="cl"></div>
               </div>

@@ -1,11 +1,15 @@
 <?php
 include "header_login.php";
+include "facebook-php-sdk.php";
 ?>
                     <!-- Content -->
+<div id="fb-root"></div>
+ <script src="js/fun.js" type="text/javascript")></script>
+ 
+ 
 
                     <div id="login">
-                    <div id = "fb-root"></div>
-
+                   
                         <div class="login">
 
                             <h2>Kasutaja olemas? Logi sisse!</h2>
@@ -61,12 +65,12 @@ include "header_login.php";
                             </div>
 
 
-
-                            <h2>Alternatiivselt logi sisse kasutades:</h2>
+                           
+                            <h2>Alternatiivselt logit sisse kasutades:</h2>
                             <a href="http://www.twitter.com"><img src="css/images/twitter.svg" alt="" width="10%" /></a>
-                            <a href = "profiil.php"><img src="css/images/facebook29.svg" alt="" width="10%"/></a>
-                            
-
+                            <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"
+                            scope="public_profile,email" onlogin="checkLoginState();"></div>
+                   
                             <a href="https://plus.google.com">
 
                                 <img src="css/images/google.svg" alt="" width="10%" />
@@ -86,6 +90,8 @@ include "header_login.php";
                     <!-- END Sidebar -->
 
                     <div class="cl"></div>
+                   
+ 
 
 <?php              
 include "footer.php";
