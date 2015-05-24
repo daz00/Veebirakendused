@@ -9,8 +9,8 @@ include "header_reg.php";
 							<div class="info">
                             <div class="kasutaja">
                             <form name= "registreerimine" action="insert.php" method="post">
-							 <div class = "ymbris"><p> Sisesta kasutajanimi:
-                                <input type="text" name="kasutaja_nimi" id= "kasutaja_nimi" /></p></div>
+							 <div class = "ymbris"> <p>Sisesta kasutajanimi:
+                                   <input type="text" name="kasutaja_nimi" id="kasutaja_nimi" value="" onkeyup="checkName(); return false;"/> </p> </div>
                                  <div class = "ymbris"> <p>Sisesta salasõna:
                                    <input type="password" name="parool_1" id="parool_1" onkeyup="checkPass(); return false;"/> </p></div>
                                      <div class = "ymbris"><p>Sisesta salasõna uuesti:

@@ -49,7 +49,7 @@ include "header.php";
                           <div class ="ymbris">
                           <div class="login">
                               <h2>Profiili muutmine:</h2>
-                              <p> Siia tuleb link, et saaks parooli ja e-maili muuta </p>
+                              <p> <a title="Kustuta" href="/kustuta.php">Kustuta kasutaja</a> </p>
                              
                               </div>
                           </div>

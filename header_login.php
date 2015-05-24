@@ -10,22 +10,7 @@ session_start();
       <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
       <link rel="icon" type="image/png" href="css/images/ce.ico"/>
 	  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" type="text/jscript"></script>
-    <script>
-    FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-        });
-  $(document).ready(function() {
-  $.ajaxSetup({ cache: true });
-  $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
-    FB.init({
-      appId: '830496170354322',
-      version: 'v2.2' // or v2.0, v2.1, v2.0
-    });     
-    $('#loginbutton,#feedbutton').removeAttr('disabled');
-    FB.getLoginStatus(updateStatusCallback);
-  });
-});
-    </script>
+
       </head>
   <body>
       <!-- Wrapper -->

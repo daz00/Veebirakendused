@@ -46,6 +46,45 @@ try{
 }
 }
 
+function kustuta_kasutaja($user){
+
+global $dbusername;
+global $dbpassword;
+
+try {
+  $pdo = new PDO('mysql:host=mysql.hostinger.ee;dbname=u179834919_baas', $dbusername, $dbpassword);
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+ 
+  $stmt = $pdo->prepare("DELETE FROM Data WHERE username = :user");
+    $stmt->execute(array(
+	':user' => $user,
+	));
+ 
+ 
+  # Affected Rows?
+  echo $stmt->rowCount();
+} catch(PDOException $e) {
+  echo 'Error: ' . $e->getMessage();
+
+}
+try {
+  $pdo = new PDO('mysql:host=mysql.hostinger.ee;dbname=u179834919_baas', $dbusername, $dbpassword);
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+ 
+  $stmt = $pdo->prepare("DELETE FROM Users WHERE username = :user");
+    $stmt->execute(array(
+	':user' => $user,
+	));
+ 
+ 
+  # Affected Rows?
+  echo $stmt->rowCount();
+} catch(PDOException $e) {
+  echo 'Error: ' . $e->getMessage();
+
+}
+}
+
 function check_fb($email){
 global $dbusername;
 global $dbpassword;
@@ -137,7 +176,30 @@ try {
 }
 }
 
-function login_FB($email){
+function user_exists($user){
+global $dbusername;
+global $dbpassword;
+try {
+    $conn = new PDO('mysql:host=mysql.hostinger.ee;dbname=u179834919_baas', $dbusername, $dbpassword);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
+     
+    $stmt = $conn->prepare('SELECT * FROM Users WHERE username = :user');
+    $stmt->execute(array(
+	':user' => $user));
+ 
+    $result = $stmt->fetchAll();
+ 
+  if ( count($result) ) { 
+	return true; 
+  } else {
+    return false;
+  }
+} catch(PDOException $e) {
+    echo 'ERROR: ' . $e->getMessage();
+}
+}
+
+function login_FB($id){
 global $dbusername;
 global $dbpassword;
 try {
@@ -145,9 +207,9 @@ try {
     $conn = new PDO('mysql:host=mysql.hostinger.ee;dbname=u179834919_baas', $dbusername, $dbpassword);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
      
-    $stmt = $conn->prepare('SELECT * FROM Users WHERE email = :email');
+    $stmt = $conn->prepare('SELECT * FROM Users WHERE FB = :id');
     $stmt->execute(array(
-	':email' => $email ));
+	':id' => $id ));
  
     $result = $stmt->fetchAll();
  
@@ -155,7 +217,8 @@ try {
   foreach($result as $row) { 
   $_SESSION["username"]= $row['username'];
 
-	}return true; 
+	}
+	var_dump((bool) 1);
   } else {
     echo "No rows returned.";
   }

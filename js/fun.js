@@ -34,6 +34,7 @@ function checkMail()
     //Võrdlemised ja sõnumivariandid
 	if(email1.value == email2.value){
 		email1.style.backgroundColor = null;
+		email2.style.backgroundColor = null;
 		message.innerHTML = "";
 		return true;
 	}
@@ -49,10 +50,51 @@ function checkMail()
     }
 } 
 
+function checkName()
+{
+    //Muutujad
+	var name = document.getElementById('kasutaja_nimi').value;
+    //Kuhu message prinditakse
+    var message = document.getElementById('confirm');
+    //Erinevad värvid 
+    var goodColor = "#66cc66";
+    var badColor = "#ff6666";
+    //Võrdlemised ja sõnumivariandid
+	if(name.length < 3){
+		document.getElementById('kasutaja_nimi').style.backgroundColor = badColor;
+		message.innerHTML = "Kasutajanimi on liiga lühike";
+		return false;
+	}
+	else{
+        document.getElementById('kasutaja_nimi').style.backgroundColor = null;
+		message.innerHTML = "";
+		return true;
+	
+    }
+} 
+
+
+function CheckUsername() 
+{
+    $.ajax({
+        type: "POST",
+        url: 'checkuser.php',
+        data: { value: document.getElementById('kasutaja_nimi')},
+        success: function() {
+            return true;
+        },
+        error: function(){
+            return false;
+        }
+
+});
+}
+
+
 function ValidateForm()   
 {
 	 
-if (ValidatePass() == true && ValidateMail() == true &&CheckMail() ==true && CheckPass() ==true){
+if (ValidatePass() == true && ValidateMail() == true && checkMail() == true && checkPass() ==true && checkName() == true && CheckUsername() == true){
 	
 	return true;
 }
@@ -81,6 +123,8 @@ var badColor = "#ff6666";
 	}
 }
 
+
+
 function ValidateMail(){
 	var email = document.getElementById('email_1');
 	var message = document.getElementById('confirm');
@@ -95,13 +139,5 @@ function ValidateMail(){
 	message.innerHTML = "E-mail on valel kujul!";
 			return false;
 }
-function Facebooklogin(d, s, id) {
 
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.2&appId=830496170354322";
-    fjs.parentNode.insertBefore(js, fjs);
-
-}
 }

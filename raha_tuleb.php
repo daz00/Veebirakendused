@@ -7,7 +7,7 @@ try {
   $kasutaja = ($_SESSION["username"]);
   $pdo = new PDO('mysql:host=mysql.hostinger.ee;dbname=u179834919_baas', $dbusername, $dbpassword);
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $sql = "UPDATE Data SET money = (money + (25*worker)/60) WHERE :username = Data.username";
+  $sql = "UPDATE Data SET money = ROUND((money + (25*worker)/60),2) WHERE :username = Data.username";
 
 
   $stmt = $pdo->prepare($sql);
